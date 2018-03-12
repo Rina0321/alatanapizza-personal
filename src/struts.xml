@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<package name="com.internousdevwork.alatanapizza.action" extends="struts-default">
+<!--仮Home struts文  -->
+		<action name="HomeAction" class="com.internousdev.alatanapizza.action.HomeAction" method="execute">
+			<result name="success">login.jsp</result>
+		</action>
+
+<!--高木担当 仮struts文  -->
+		<action name="LoginAction" class="com.internousdev.alatanapizza.action.LoginAction" method="execute">
+			<result name="success">home.jsp</result>
+			<result name="error">home.jsp</result>
+		</action>
+
+<!-- 中島担当 usercreate struts文  -->
+		<action name = "UserCreateAction" class ="com.internousdev.altanapizza.action.UserCreateAction" method = "execute">
+      		<result name = "success">userCreate.jsp</result>
+		</action>
+
+		<action name = "UserCreateConfirmAction" class = "com.internousdev.altanapizza.action.UserCreateConfirmAction" method = "execute">
+      		<result name = "success">userCreateConfirm.jsp</result>
+      		<result name = "error"> userCreate.jsp </result>
+		</action>
+
+		<action name = "UserCreateCompleteAction" class = "com.internousdev.altanapizza.action.UserCreateCompleteAction" method = "execute">
+      		<result name = "success">userCreateComplete.jsp</result>
+		</action>
+
+<!-- 日本 パスワード再設定 -->
+		<action name="ChangePasswordAction" class="com.internousdev.alatanapizza.action.ChangePasswordAction" method="execute">
+			<result name="success">changePassword.jsp</result></action>
+		<action name="ChangePasswordConfirmAction" class="com.internousdev.alatanapizza.action.ChangePasswordConfirmAction" method="execute">
+			<result name="success">changePasswordConfirm.jsp</result>
+			<result name="error">changePassword.jsp</result></action>
+		<action name="ChangePasswordCompleteAction" class="com.internousdev.alatanapizza.action.ChangePasswordCompleteAction" method="execute">
+			<result name="success">changePasswordComplete.jsp</result>
+			<result name="error">changePasswordComplete.jsp</result></action>
+
+<!--金子担当 Cart struts文  -->
+		<action name="GoCartAction" class="com.internousdev.alatanapizza.action.GoCartAction" method="execute">
+			<result name="success">cart.jsp</result></action>
+
+<!--上原担当CartDeleteAction(カート内削除機能）  -->
+		<action name="CartDeleteAction" class="com.internousdev.alatanapizza.action.CartDeleteAction" method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">cart.jsp</result></action>
+
+<!--上原担当BuyItemCompleteAction(決済確認画面）  -->
+		<action name="BuyItemCompleteAction" class="com.internousdev.alatanapizza.action.BuyItemCompleteAction" method="execute">
+			<result name="success">settlement.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="destination">destinationRegister.jsp</result> <!--宛先変更ページ-->
+			<result name="other">cart.jsp</result>
+		</action>
+
+<!--上原担当PurchaseCompleteAction(決済完了画面）  -->
+		<action name="PurchaseCompleteAction" class="com.internousdev.alatanapizza.action.PurchaseCompleteAction" method="execute">
+			<result name="success">purchaseComplete.jsp</result>
+			<result name="error">cart.jsp</result>
+			<result name="other">cart.jsp</result>
+		</action>
+
+<!--上原担当PurchaseHistoryAction(購入履歴の画面）  -->
+		<action name="PurchaseHistoryAction" class="com.internousdev.alatanapizza.action.PurchaseHistoryAction" method="execute">
+			<result name="success">purchaseHistory.jsp </result>
+			<result name="error">login.jsp</result>
+		</action>
+
+<!-- 荒木担当  MyPage struts文  -->
+		<action name = "MyPageAction" class ="com.internousdev.altanapizza.action.MyPageAction" method = "execute">
+     		 <result name = "success">myPage.jsp</result>
+		</action>
+
+		<action name = "MasterAddAction" class ="com.internousdev.altanapizza.action.MasterAddAction" method = "execute">
+      		<result name = "success">MasterAdd.jsp</result>
+		</action>
+
+		<action name = "MasterAddConfirmAction" class ="com.internousdev.altanapizza.action.MasterAddConfirmAction" method = "execute">
+      		<result name = "success">MasterAddConfirm.jsp</result>
+		</action>
+
+		<action name = "MasterAddCompleteAction" class ="com.internousdev.altanapizza.action.MasterAddCompletemAction" method = "execute">
+      		<result name = "success">MasterAddComplete.jsp</result>
+		</action>
+
+<!-- 商品グループ  -->
+<!--須藤担当 struts文  -->
+		<action name="ProductListAction" class="com.internousdev.alatanapizza.action.ProductListAction" method="execute">
+			<result name="success">productList.jsp</result>
+		</action>
+
+		<action name="ProductDetailsAction" class="com.internousdev.alatanapizza.action.ProductDetailsAction" method="execute">
+			<result name="success">productDetails.jsp</result>
+			<result name="error">productDetails.jsp</result>
+		</action>
+
+
+	</package>
+</struts>
